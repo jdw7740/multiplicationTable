@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #F89B3C;
+            font-family: 'Oswald', sans-serif;
+        }
+        header {
+            display: block;
+            background-color: #D94034;
+            margin: 15px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 3px 5px hsla(0, 0%, 0%, 0.322);
+        }
+        header button {
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #0000007c;
+            margin-top: 20px;
+            background-color: #FA9641;
+        }
+        header button:hover {
+            animation: buttonAnimation 0.2s forwards;
+        }
+        header button:active {
+            animation: buttonClick 0.2s forwards;
+        }
+        @keyframes buttonAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-5px);
+                box-shadow: 3px 5px hsla(0, 0%, 0%, 0.322);
+            }
+        }
+        @keyframes buttonClick {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-2px);
+                box-shadow: 3px 5px hsla(0, 0%, 0%, 0.322);
+            }
+        }
+        .table {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            column-count: 5;
+        }
+        .tableBase {
+            border: 1px solid rgba(0, 0, 0, 0.247);
+            background-color: #D97034;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 3px 5px hsla(0, 0%, 0%, 0.322);
+            font-size: 1rem;
+        }
+        .tableBase:hover {
+            animation: moveBox 0.35s forwards;
+        }
+
+        @keyframes moveBox {
+            0% {
+                transform: translateX(0px);
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateX(2px);
+                transform: translateY(-5px);
+            }
+        }
+        .tableBase:nth-of-type(even) {
+            background: #F06A46;
+        }
+        .tableBase h3 {
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        .numList {
+            display: block;
+            padding: 5px;
+            border-bottom: 1px solid black;
+        }
+        .numList:last-child {
+            border-bottom: 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="mainHeader">
+        <h1>JavaScript Multiplication Table</h1>
+        <p>Check out Multiplication tables up to 500 tables</p>
+        <button onClick=runScript()>How many Tables?</button>
+    </header>
+    <div id="root" class="table"></div>
+    <script src="multiplicationtable.js"></script>
+</body>
+</html>
